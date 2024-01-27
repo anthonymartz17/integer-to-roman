@@ -3,7 +3,8 @@ const romanNum = document
 	.addEventListener("keyup", getRomanNum);
 
 function getRomanNum(event) {
-	const roman = convertIntToRoman(event.target.value);
+	const num = event.target.value;
+	const roman = !num ? num : convertIntToRoman(num.match(/[0-9]/g).join(""));
 	document.querySelector(".roman-num").innerHTML = roman;
 }
 
@@ -46,9 +47,7 @@ function convertIntToRoman(num) {
 			const romanNum =
 				symbol[placeValue] + symbol[NumByPlaceValue + placeValue];
 			romanNumeral.unshift(romanNum);
-
 		} else {
-			console.log(NumByPlaceValue, "NumByPlaceValue");
 			while (!symbol[NumByPlaceValue]) {
 				console.log(i);
 				NumByPlaceValue -= placeValue;
