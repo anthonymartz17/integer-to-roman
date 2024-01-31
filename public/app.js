@@ -37,17 +37,21 @@ function convertIntToRoman(num) {
 	let placeValue = 1;
 
 	for (let i = strNum.length - 1; i >= 0; i--) {
+
 		if (strNum[i] == 0) {
 			placeValue *= 10;
 			continue;
 		}
+
 		let NumByPlaceValue = Number(strNum[i]) * placeValue;
 
 		if (strNum[i] == 9 || strNum[i] == 4) {
 			const romanNum =
 				symbol[placeValue] + symbol[NumByPlaceValue + placeValue];
 			romanNumeral.unshift(romanNum);
+			
 		} else {
+			
 			while (!symbol[NumByPlaceValue]) {
 				console.log(i);
 				NumByPlaceValue -= placeValue;
