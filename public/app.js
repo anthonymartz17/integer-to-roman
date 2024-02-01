@@ -46,11 +46,12 @@ function convertIntToRoman(num) {
 		let NumByPlaceValue = Number(strNum[i]) * placeValue;
 
 		if (strNum[i] == 9 || strNum[i] == 4) {
-			const romanNum =
-				symbol[placeValue] + symbol[NumByPlaceValue + placeValue];
+			const romanNum = symbol[placeValue] + symbol[NumByPlaceValue + placeValue];
 			romanNumeral.unshift(romanNum);
 			
-		} else {
+		}
+		
+		else {
 			
 			while (!symbol[NumByPlaceValue]) {
 				console.log(i);
