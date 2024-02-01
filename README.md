@@ -49,17 +49,17 @@ We multiply the current number by the current place value to get the number to b
 let numByPlaceValue = Number(strNum[i]) * placeValue;
 ```
 
-Handling an edge case:
+## Handling an edge case:
 
 Roman numerals generally place the greater number to the left, except when it comes to the numbers 4 and 9.
 
-Ex: 4: IV, 40: XL, 400: CD, 9: IX, 90: XC, 900: CM
+Ex: 4: IV,     40: XL,     400: CD,     9: IX,    90: XC,     900: CM
 
 To handle this case, we can use the current place value since it will always be the number that should go to the left. The number to the right we can get it by adding the current place value plus the current number.
 
 Ex::
-Place value = 1 (I), current number = 4; (4 + 1) = 5 (V) => IV
-Place value = 10 (X), current number = 90; (90 + 10) = 100 (C) => XC
+Place value = 1 (I),    current number = 4;      (4 + 1) = 5 (V)     => IV
+Place value = 10 (X),   current number = 90;     (90 + 10) = 100 (C)    => XC
 
 ```js
 
